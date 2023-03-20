@@ -20,6 +20,7 @@ const choices: Array<string> = ["rock", "paper", "scissors"];
 
 let pScore = 0;
 let cScore = 0;
+let isClicked = false;
 
 function randomNumber(): number {
   return Math.floor(Math.random() * choices.length);
@@ -59,11 +60,23 @@ function displayAssets(pC: string, cC: string) {
   computerChoice.src = `./public/assets/${cC}.png`;
 }
 
+function addPointerClass() {
+  for (let j = 0; j < gameButtons.length; j++) {
+    if (!gameButtons[j].classList.contains("pointer-events")) {
+      gameButtons[j].classList.add("pointer-events");
+    } else {
+      gameButtons[j].classList.remove("pointer-events");
+    }
+  }
+}
+
 function handleButtons() {
   for (let i = 0; i < gameButtons.length; i++) {
     gameButtons[i].addEventListener("click", function () {
       const pChoice: string = this.dataset.choice!;
       const cChoice: string = choices[randomNumber()];
+
+      addPointerClass();
 
       playerChoice.src = "./public/assets/rock.png";
       computerChoice.src = "./public/assets/rock.png";
@@ -76,6 +89,8 @@ function handleButtons() {
         handleGameOptions(pChoice, cChoice);
 
         displayAssets(pChoice, cChoice);
+
+        addPointerClass();
       }, 2500);
     });
   }

@@ -9,6 +9,7 @@ const computerSide = document.getElementById("computer-side");
 const choices = ["rock", "paper", "scissors"];
 let pScore = 0;
 let cScore = 0;
+let isClicked = false;
 function randomNumber() {
     return Math.floor(Math.random() * choices.length);
 }
@@ -42,11 +43,22 @@ function displayAssets(pC, cC) {
     playerChoice.src = `./public/assets/${pC}.png`;
     computerChoice.src = `./public/assets/${cC}.png`;
 }
+function addPointerClass() {
+    for (let j = 0; j < gameButtons.length; j++) {
+        if (!gameButtons[j].classList.contains("pointer-events")) {
+            gameButtons[j].classList.add("pointer-events");
+        }
+        else {
+            gameButtons[j].classList.remove("pointer-events");
+        }
+    }
+}
 function handleButtons() {
     for (let i = 0; i < gameButtons.length; i++) {
         gameButtons[i].addEventListener("click", function () {
             const pChoice = this.dataset.choice;
             const cChoice = choices[randomNumber()];
+            addPointerClass();
             playerChoice.src = "./public/assets/rock.png";
             computerChoice.src = "./public/assets/rock.png";
             handleAnimation();
@@ -54,6 +66,7 @@ function handleButtons() {
                 resetAnimation();
                 handleGameOptions(pChoice, cChoice);
                 displayAssets(pChoice, cChoice);
+                addPointerClass();
             }, 2500);
         });
     }

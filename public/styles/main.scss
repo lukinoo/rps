@@ -44,6 +44,9 @@ section {
       background: none;
       outline: none;
       cursor: pointer;
+      &.pointer-events {
+        pointer-events: none;
+      }
     }
   }
 }
