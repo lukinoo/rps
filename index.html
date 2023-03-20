@@ -8,7 +8,38 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <h1>rock paper scissors</h1>
+    <header>
+      <h3 class="score-result" id="player-score">Player score: 0</h3>
+      <h3 class="score-result" id="computer-score">Computer score: 0</h3>
+    </header>
+    <section>
+      <div class="playground">
+        <div class="player-side" id="player-side">
+          <img
+            class="player-choice"
+            id="player-choice"
+            src="./public/assets/rock.png"
+            alt="rock"
+          />
+        </div>
+        <div class="computer-side" id="computer-side">
+          <img
+            class="computer-choice"
+            id="computer-choice"
+            src="./public/assets/rock.png"
+            alt="rock"
+          />
+        </div>
+      </div>
+      <div class="game-buttons">
+        <button data-choice="rock" class="game-button rock">Rock</button>
+        <button data-choice="paper" class="game-button paper">Paper</button>
+        <button data-choice="scissors" class="game-button scissors">
+          Scissors
+        </button>
+      </div>
+    </section>
+
     <script src="./public/dist/index.js"></script>
   </body>
 </html>
