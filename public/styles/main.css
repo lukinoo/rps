@@ -64,4 +64,7 @@ section .game-buttons .game-button {
   background: none;
   outline: none;
   cursor: pointer;
+}
+section .game-buttons .game-button.pointer-events {
+  pointer-events: none;
 }/*# sourceMappingURL=main.css.map */
