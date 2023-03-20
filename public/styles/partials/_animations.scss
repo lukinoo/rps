@@ -1,0 +1,14 @@
+@keyframes hand-shake {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(35px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  75% {
+    transform: translateY(75px);
+  }
+}
