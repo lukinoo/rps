@@ -56,8 +56,8 @@ function resetAnimation() {
 }
 
 function displayAssets(pC: string, cC: string) {
-  playerChoice.src = `./public/assets/${pC}.png`;
-  computerChoice.src = `./public/assets/${cC}.png`;
+  playerChoice.src = `../assets/${pC}.png`;
+  computerChoice.src = `../assets/${cC}.png`;
 }
 
 function addPointerClass() {
